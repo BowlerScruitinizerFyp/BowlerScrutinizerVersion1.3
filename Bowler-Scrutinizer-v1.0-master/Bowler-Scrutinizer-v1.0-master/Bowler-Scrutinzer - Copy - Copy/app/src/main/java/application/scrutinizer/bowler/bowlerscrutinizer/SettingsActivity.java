@@ -45,8 +45,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         AlertDialog.Builder a_Builder = new AlertDialog.Builder(this);
         a_Builder.setMessage("Are you sure that you want to Deactivate your Account")
-        .setCancelable(false)
-        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setTitle("Alert");
+       // .setCancelable(true)
+        a_Builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -65,13 +66,15 @@ public class SettingsActivity extends AppCompatActivity {
                         });
 
             }
-        })
+        });
 
-        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+        a_Builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                dialog.cancel();
+               //dialog.cancel();
+
+                Toast.makeText(SettingsActivity.this , "You said no to Deactivate your Account", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -131,7 +134,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void Log_out(View view) {
 
         AlertDialog.Builder a_Builder = new AlertDialog.Builder(this);
-        a_Builder.setMessage("Are you sure that you want to Deactivate your Account")
+        a_Builder.setMessage("Are you sure that you want to Logout from your Account")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -150,11 +153,12 @@ public class SettingsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        dialog.cancel();
+                       // dialog.cancel();
+
+                        Toast.makeText(SettingsActivity.this , "You said no to Log out your Account", Toast.LENGTH_LONG).show();
 
                     }
                 });
-
         AlertDialog alert = a_Builder.create();
         alert.setTitle("Alert");
         alert.show();

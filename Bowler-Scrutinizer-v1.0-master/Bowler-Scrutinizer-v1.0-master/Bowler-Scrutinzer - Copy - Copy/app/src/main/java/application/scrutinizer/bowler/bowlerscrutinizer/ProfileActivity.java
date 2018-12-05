@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -90,7 +91,7 @@ public class ProfileActivity extends AppCompatActivity
         else if (id == R.id.log_out) {
 
             AlertDialog.Builder a_Builder = new AlertDialog.Builder(this);
-            a_Builder.setMessage("Are you sure that you want to Deactivate your Account")
+            a_Builder.setMessage("Are you sure that you want to Log out from your Account")
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -109,7 +110,8 @@ public class ProfileActivity extends AppCompatActivity
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
 
-                            dialog.cancel();
+                           // dialog.cancel();
+                            Toast.makeText(ProfileActivity.this , "You said no to Log out your Account", Toast.LENGTH_LONG).show();
 
                         }
                     });
@@ -157,7 +159,7 @@ public class ProfileActivity extends AppCompatActivity
         } else if (id == R.id.nav_logout) {
 
             AlertDialog.Builder a_Builder = new AlertDialog.Builder(this);
-            a_Builder.setMessage("Are you sure that you want to Deactivate your Account")
+            a_Builder.setMessage("Are you sure that you want to Logout from your Account")
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -176,7 +178,8 @@ public class ProfileActivity extends AppCompatActivity
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
 
-                            dialog.cancel();
+                          //  dialog.cancel();
+                            Toast.makeText(ProfileActivity.this , "You said no to Log out your Account", Toast.LENGTH_LONG).show();
 
                         }
                     });
@@ -218,7 +221,7 @@ public class ProfileActivity extends AppCompatActivity
     public void View_Logout(View view) {
 
         AlertDialog.Builder a_Builder = new AlertDialog.Builder(this);
-        a_Builder.setMessage("Are you sure that you want to Deactivate your Account")
+        a_Builder.setMessage("Are you sure that you want to Logout from your Account")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -237,8 +240,9 @@ public class ProfileActivity extends AppCompatActivity
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        dialog.cancel();
+                       // dialog.cancel();
 
+                        Toast.makeText(ProfileActivity.this , "You said no to Log out your Account", Toast.LENGTH_LONG).show();
                     }
                 });
 
